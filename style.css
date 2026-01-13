@@ -19,15 +19,39 @@
     25% { background: blue; }
     50% { 
         background: teal; 
-        transform:scale(0.5) skew(40deg) rotate(180deg);
+      
     
     }
     75% { background: skyblue;}
     100% { background: navy; }
 }
 
-
-
+/* STEP 1: Config. an elementr to be animated
+   but using the shortcut "animation" property which 
+   sets the name duration, iterations, timing fuction 
+   ALL IN ONE LINE! 
+   */
+#animated-emoji {
+    font-size: 80px;
+    animation: move-emoji 5s infinite linear;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    left: 65px;
+   }
+/* STEP 2: an animation sequence */
+@keyframes move-emoji {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
 .box {
